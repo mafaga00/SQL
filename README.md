@@ -299,130 +299,430 @@ VALUES
 
 1. Вывести все поля и все строки. 
 
-`SELECT * FROM users_table;`
+`SELECT * FROM students;`
 
 2. Вывести всех студентов в таблице
 
-`SELECT * FROM users_table WHERE role = 'student';`
+`SELECT id,name,email FROM students;`
 
 3. Вывести только Id пользователей
 
-`SELECT id FROM users_table;`
+`SELECT id FROM students;`
 
 4. Вывести только имя пользователей
 
-`SELECT name FROM users_table;`
+`SELECT name FROM students;`
 
 5. Вывести только email пользователей
 
-`SELECT email FROM users_table;`
+`SELECT email FROM students;`
 
 6. Вывести имя и email пользователей
 
-`SELECT name, email FROM users_table;`
+`SELECT name, email FROM students;`
 
 7. Вывести id, имя, email и дату создания пользователей
 
-`SELECT id, name, email, created_at FROM users_table;`
+`SELECT id, name, email, created_at FROM students;`
 
 8. Вывести пользователей где password 12333
 
-`SELECT * FROM users_table WHERE password = '12333';`
+`SELECT * FROM students WHERE password = '12333';`
 
 9. Вывести пользователей которые были созданы 2021-03-26 00:00:00
 
-`SELECT * FROM users_table WHERE DATETIME(created_on) = '2021-03-26 00:00:00';`
+`SELECT * FROM students WHERE DATETIME(created_on) = '2021-03-26 00:00:00';`
 
 10. Вывести пользователей где в имени есть слово Анна
 
-`SELECT * FROM users_table WHERE name LIKE '%Анна%';`
+`SELECT * FROM students WHERE name LIKE '%Анна%';`
 
 11. Вывести пользователей где в имени в конце есть 8
 
-`SELECT * FROM users_table WHERE name LIKE '%8';`
+`SELECT * FROM students WHERE name LIKE '%8';`
 
 12. Вывести пользователей где в имени в есть буква а
 
-`SELECT * FROM users_table WHERE name LIKE '%а%';`
+`SELECT * FROM students WHERE name LIKE '%а%';`
 
 13. Вывести пользователей которые были созданы 2021-07-12 00:00:00
 
-`SELECT * FROM users_table WHERE DATETIME(created_on) = '2021-07-12 00:00:00';`
+`SELECT * FROM students WHERE DATETIME(created_on) = '2021-07-12 00:00:00';`
 
 14. Вывести пользователей которые были созданы 2021-07-12 00:00:00 и имеют пароль 1m313
 
-`SELECT * FROM users_table WHERE DATETIME(created_on) = '2021-07-12 00:00:00' AND password = '1m313';`
+`SELECT * FROM students WHERE DATETIME(created_on) = '2021-07-12 00:00:00' AND password = '1m313';`
 
 15. Вывести пользователей которые были созданы 2021-07-12 00:00:00 и у которых в имени есть слово Andrey
 
-`SELECT * FROM users_table WHERE DATETIME(created_on) = '2021-07-12 00:00:00' AND name LIKE '%Andrey%';`
+`SELECT * FROM students WHERE DATETIME(created_on) = '2021-07-12 00:00:00' AND name LIKE '%Andrey%';`
 
 16. Вывести пользователей которые были созданы 2021-07-12 00:00:00 и у которых в имени есть цифра 8
 
-`SELECT * FROM users_table WHERE DATETIME(created_on) = '2021-07-12 00:00:00' AND name LIKE '%8%';`
+`SELECT * FROM students WHERE DATETIME(created_on) = '2021-07-12 00:00:00' AND name LIKE '%8%';`
 
 17. Вывести пользователя у которых id равен 110
 
-`SELECT * FROM users_table WHERE id = 110;`
+`SELECT * FROM students WHERE id = 110;`
 
 18. Вывести пользователя у которых id равен 153
 
-`SELECT * FROM users_table WHERE id = 153;`
+`SELECT * FROM students WHERE id = 153;`
 
 19. Вывести пользователя у которых id больше 140
 
-`SELECT * FROM users_table WHERE id > 140;`
+`SELECT * FROM students WHERE id > 140;`
 
 20. Вывести пользователя у которых id меньше 130
 
-`SELECT * FROM users_table WHERE id < 130;`
+`SELECT * FROM students WHERE id < 130;`
 
 21. Вывести пользователя у которых id меньше 127 или больше 188
 
-`SELECT * FROM users_table WHERE id < 127 OR id > 188;`
+`SELECT * FROM students WHERE id < 127 OR id > 188;`
 
 22. Вывести пользователя у которых id меньше либо равно 137
 
-`SELECT * FROM users_table WHERE id <= 137;`
+`SELECT * FROM students WHERE id <= 137;`
 
 23. Вывести пользователя у которых id больше либо равно 137
 
-`SELECT * FROM users_table WHERE id >= 137;`
+`SELECT * FROM students WHERE id >= 137;`
 
 24. Вывести пользователя у которых id больше 180 но меньше 190
 
-`SELECT * FROM users_table WHERE id > 180 AND id < 190;`
+`SELECT * FROM students WHERE id > 180 AND id < 190;`
 
 25. Вывести пользователя у которых id между 180 и 190
 
-`SELECT * FROM users_table WHERE id BETWEEN 180 AND 190;`
+`SELECT * FROM students WHERE id BETWEEN 180 AND 190;`
 
 26. Вывести пользователей где password равен 12333, 1m313, 123313
 
-`SELECT * FROM users_table WHERE password IN ('12333', '1m313', '123313');`
+`SELECT * FROM students WHERE password IN ('12333', '1m313', '123313');`
 
 27. Вывести пользователей где created_on равен 2020-10-03 00:00:00, 2021-05-19 00:00:00, 2021-03-26 00:00:00
 
-`SELECT * FROM users_table WHERE DATETIME(created_on) IN ('2020-10-03 00:00:00', '2021-05-19 00:00:00', '2021-03-26 00:00:00');`
+`SELECT * FROM students WHERE DATETIME(created_on) IN ('2020-10-03 00:00:00', '2021-05-19 00:00:00', '2021-03-26 00:00:00');`
 
 28. Вывести минимальный id 
 
-`SELECT MIN(id) FROM users_table;`
+`SELECT MIN(id) FROM students;`
 
 29. Вывести максимальный.
 
-`SELECT MAX(id) FROM users_table;`
+`SELECT MAX(id) FROM students;`
 
 30. Вывести количество пользователей
 
-`SELECT COUNT(id) FROM users_table;`
+`SELECT COUNT(id) FROM students;`
 
 31. Вывести id пользователя, имя, дату создания пользователя. Отсортировать по порядку возрастания даты добавления пользоватлеля.
 
-`SELECT id, name, created_on FROM users_table ORDER BY created_on ASC;`
+`SELECT id, name, created_on FROM students ORDER BY created_on ASC;`
 
 32. Вывести id пользователя, имя, дату создания пользователя. Отсортировать по порядку убывания даты добавления пользоватлеля.
 
-`SELECT id, name, created_on FROM users_table ORDER BY created_on DESC;`
+`SELECT id, name, created_on FROM students ORDER BY created_on DESC;`
+
+***
+
+# SQL_HW_3
+
+1. Вывести всех работников чьи зарплаты есть в базе, вместе с зарплатами.
+
+```
+select employee_name, monthly_salary from employee_salary
+join employees on employees.id = employee_salary.employee_id 
+join salary on salary.id = employee_salary.salary_id;
+```
+2. Вывести всех работников у которых ЗП меньше 2000.
+
+```
+select employee_name, monthly_salary from employee_salary
+join employees on employee_salary.employee_id = employees.id 
+join salary on employee_salary.salary_id = salary.id
+where salary.monthly_salary < 2000;
+```
+3. Вывести все зарплатные позиции, но работник по ним не назначен. (ЗП есть, но не понятно кто её получает.)
+
+```
+select monthly_salary from salary
+full join employee_salary on employee_salary.salary_id = salary.id 
+where employee_salary.id is null;
+```
+4. Вывести все зарплатные позиции меньше 2000 но работник по ним не назначен. (ЗП есть, но не понятно кто её получает.)
+
+```
+select monthly_salary from salary 
+full join employee_salary on employee_salary.salary_id = salary.id 
+where employee_salary.id is null and employee_salary.id < 2000;
+```
+5. Найти всех работников кому не начислена ЗП.
+
+```
+select employee_name, monthly_salary from employees 
+left join employee_salary on employees.id = employee_salary.employee_id 
+left join salary on employee_salary.salary_id = salary.id 
+where salary.monthly_salary is null;
+```
+6. Вывести всех работников с названиями их должности.
+
+```
+select employee_name, role_name from roles_employee 
+join employees on roles_employee.employee_id = employees.id 
+join roles on roles_employee.role_id = roles.id;
+```
+7. Вывести имена и должность только Java разработчиков.
+
+```
+select employee_name, role_name from roles_employee 
+join employees on roles_employee.employee_id = employees.id
+join roles on roles_employee.role_id = roles.id
+where role_name like '%Java developer';
+```
+8. Вывести имена и должность только Python разработчиков.
+
+```
+select employee_name, role_name from roles_employee 
+join employees on roles_employee.employee_id = employees.id
+join roles on roles.id = roles_employee.role_id 
+where role_name like '%Python developer';
+```
+9. Вывести имена и должность всех QA инженеров.
+
+```
+select employee_name, role_name from roles_employee 
+join employees on roles_employee.employee_id = employees.id 
+join roles on roles_employee.role_id = roles.id 
+where role_name like '%QA%';
+```
+10. Вывести имена и должность ручных QA инженеров.
+
+```
+select employee_name, role_name from roles_employee
+join employees on roles_employee.employee_id = employees.id 
+join roles on roles_employee.role_id = roles.id 
+where role_name like '%Manual QA engineer';
+```
+11. Вывести имена и должность автоматизаторов QA
+
+```
+select employee_name, role_name from roles_employee 
+join employees on roles_employee.employee_id = employees.id 
+join roles on roles_employee.role_id = roles.id 
+where role_name like '%Automation%';
+```
+12. Вывести имена и зарплаты Junior специалистов
+
+```
+select employee_name, role_name, monthly_salary from salary
+join employee_salary on salary.id = employee_salary.salary_id 
+join employees on employee_salary.employee_id = employees.id 
+join roles_employee on employees.id = roles_employee.employee_id 
+join roles on roles_employee.role_id = roles.id 
+where role_name like 'Junior%';
+```
+13. Вывести имена и зарплаты Middle специалистов
+
+```
+select employee_name, role_name, monthly_salary from salary
+join employee_salary on salary.id = employee_salary.salary_id 
+join employees on employee_salary.employee_id = employees.id 
+join roles_employee on employees.id = roles_employee.employee_id 
+join roles on roles_employee.role_id = roles.id 
+where role_name like 'Middle%';
+```
+14. Вывести имена и зарплаты Senior специалистов
+
+```
+select employee_name, role_name, monthly_salary from salary
+join employee_salary on salary.id = employee_salary.salary_id 
+join employees on employee_salary.employee_id = employees.id 
+join roles_employee on employees.id = roles_employee.employee_id 
+join roles on roles_employee.role_id = roles.id 
+where role_name like 'Senior%';
+```
+15. Вывести зарплаты Java разработчиков
+
+```
+select monthly_salary from salary
+join employee_salary on salary.id = employee_salary.salary_id 
+join roles_employee on employee_salary.employee_id  = roles_employee.employee_id 
+join roles on roles_employee.role_id = roles.id 
+where role_name like '%Java developer';
+```
+16. Вывести зарплаты Python разработчиков
+
+```
+select monthly_salary from salary
+join employee_salary on salary.id = employee_salary.salary_id 
+join roles_employee on employee_salary.employee_id  = roles_employee.employee_id 
+join roles on roles_employee.role_id = roles.id 
+where role_name like '%Python developer'
+```
+17. Вывести имена и зарплаты Junior Python разработчиков
+
+```
+select employee_name, role_name, monthly_salary from salary
+join employee_salary on salary.id = employee_salary.salary_id 
+join employees on employee_salary.employee_id = employees.id 
+join roles_employee on employees.id = roles_employee.employee_id 
+join roles on roles_employee.role_id = roles.id 
+where role_name = 'Junior Python developer';
+```
+18. Вывести имена и зарплаты Middle JS разработчиков
+
+```
+select employee_name, role_name, monthly_salary from salary
+join employee_salary on salary.id = employee_salary.salary_id 
+join employees on employee_salary.employee_id = employees.id 
+join roles_employee on employees.id = roles_employee.employee_id 
+join roles on roles_employee.role_id = roles.id 
+where role_name = 'Middle JavaScript developer';
+```
+19. Вывести имена и зарплаты Senior Java разработчиков
+
+```
+select employee_name, role_name, monthly_salary from salary
+join employee_salary on salary.id = employee_salary.salary_id 
+join employees on employee_salary.employee_id = employees.id 
+join roles_employee on employees.id = roles_employee.employee_id 
+join roles on roles_employee.role_id = roles.id 
+where role_name = 'Senior Java developer';
+```
+20. Вывести зарплаты Junior QA инженеров
+
+```
+select employee_name, role_name, monthly_salary from salary
+join employee_salary on salary.id = employee_salary.salary_id 
+join employees on employee_salary.employee_id = employees.id 
+join roles_employee on employees.id = roles_employee.employee_id 
+join roles on roles_employee.role_id = roles.id 
+where role_name like 'Junior%QA engineer';
+```
+21. Вывести среднюю зарплату всех Junior специалистов
+
+```
+select round(avg(monthly_salary)) from salary 
+join employee_salary on salary.id = employee_salary.salary_id 
+join employees on employee_salary.employee_id = employees.id 
+join roles_employee on employees.id = roles_employee.employee_id 
+join roles on roles_employee.role_id = roles.id 
+where role_name like 'Junior%';
+```
+22. Вывести сумму зарплат JS разработчиков
+
+```
+select sum(monthly_salary) from salary 
+join employee_salary on salary.id = employee_salary.salary_id 
+join employees on employee_salary.employee_id = employees.id 
+join roles_employee on employees.id = roles_employee.employee_id 
+join roles on roles_employee.role_id = roles.id 
+where role_name like '%JavaScript developer';
+```
+23. Вывести минимальную ЗП QA инженеров
+
+```
+select min(monthly_salary) from salary 
+join employee_salary on salary.id = employee_salary.salary_id 
+join employees on employee_salary.employee_id = employees.id 
+join roles_employee on employees.id = roles_employee.employee_id 
+join roles on roles_employee.role_id = roles.id 
+where role_name like '%QA engineer';
+```
+24. Вывести максимальную ЗП QA инженеров
+
+```
+select max(monthly_salary) from salary 
+join employee_salary on salary.id = employee_salary.salary_id 
+join employees on employee_salary.employee_id = employees.id 
+join roles_employee on employees.id = roles_employee.employee_id 
+join roles on roles_employee.role_id = roles.id 
+where role_name like '%QA engineer';
+```
+25. Вывести количество QA инженеров
+
+```
+select count(role_name) from salary 
+join employee_salary on salary.id = employee_salary.salary_id 
+join employees on employee_salary.employee_id = employees.id 
+join roles_employee on employees.id = roles_employee.employee_id 
+join roles on roles_employee.role_id = roles.id 
+where role_name like '%QA engineer';
+```
+26. Вывести количество Middle специалистов
+
+```
+select count(role_name) from salary 
+join employee_salary on salary.id = employee_salary.salary_id 
+join employees on employee_salary.employee_id = employees.id 
+join roles_employee on employees.id = roles_employee.employee_id 
+join roles on roles_employee.role_id = roles.id 
+where role_name like 'Middle%';
+```
+27. Вывести количество разработчиков
+
+```
+select count(role_name) from salary 
+join employee_salary on salary.id = employee_salary.salary_id 
+join employees on employee_salary.employee_id = employees.id 
+join roles_employee on employees.id = roles_employee.employee_id 
+join roles on roles_employee.role_id = roles.id 
+where role_name like '%developer';
+```
+28. Вывести фонд (сумму) зарплаты разработчиков
+
+```
+select sum(monthly_salary) from salary 
+join employee_salary on salary.id = employee_salary.salary_id 
+join employees on employee_salary.employee_id = employees.id 
+join roles_employee on employees.id = roles_employee.employee_id 
+join roles on roles_employee.role_id = roles.id 
+where role_name like '%developer';
+```
+29. Вывести имена, должности и ЗП всех специалистов по возрастанию
+
+```
+select employee_name, role_name, monthly_salary from salary
+join employee_salary on salary.id = employee_salary.salary_id 
+join employees on employee_salary.employee_id = employees.id 
+join roles_employee on employees.id = roles_employee.employee_id 
+join roles on roles_employee.role_id = roles.id 
+order by monthly_salary
+```
+30. Вывести имена, должности и ЗП всех специалистов по возрастанию у специалистов у которых ЗП от 1700 до 2300
+
+```
+select employee_name, role_name, monthly_salary from salary
+join employee_salary on salary.id = employee_salary.salary_id 
+join employees on employee_salary.employee_id = employees.id 
+join roles_employee on employees.id = roles_employee.employee_id 
+join roles on roles_employee.role_id = roles.id 
+where monthly_salary between 1700 and 2300
+order by monthly_salary
+```
+31. Вывести имена, должности и ЗП всех специалистов по возрастанию у специалистов у которых ЗП меньше 2300
+
+```
+select employee_name, role_name, monthly_salary from salary
+join employee_salary on salary.id = employee_salary.salary_id 
+join employees on employee_salary.employee_id = employees.id 
+join roles_employee on employees.id = roles_employee.employee_id 
+join roles on roles_employee.role_id = roles.id 
+where monthly_salary < 2300
+order by monthly_salary
+```
+32. Вывести имена, должности и ЗП всех специалистов по возрастанию у специалистов у которых ЗП равна 1100, 1500, 2000
+
+```
+select employee_name, role_name, monthly_salary from salary
+join employee_salary on salary.id = employee_salary.salary_id 
+join employees on employee_salary.employee_id = employees.id 
+join roles_employee on employees.id = roles_employee.employee_id 
+join roles on roles_employee.role_id = roles.id 
+where monthly_salary in (1100, 1500, 2000)
+order by monthly_salary
+```
 
 ***
