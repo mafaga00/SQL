@@ -8,13 +8,15 @@ join employees on employee_salary.employee_id = employees.id
 join salary on employee_salary.salary_id = salary.id
 where salary.monthly_salary < 2000;
 -- Вывести все зарплатные позиции, но работник по ним не назначен. (ЗП есть, но не понятно кто её получает.)
-select monthly_salary from salary
-full join employee_salary on employee_salary.salary_id = salary.id 
-where employee_salary.id is null;
+select monthly_salary from employees
+right join employee_salary ON employees.id = employee_salary.employee_id
+right join salary on employee_salary.salary_id = salary.id 
+where employees.id is null;
 -- Вывести все зарплатные позиции меньше 2000 но работник по ним не назначен. (ЗП есть, но не понятно кто её получает.)
-select monthly_salary from salary 
-full join employee_salary on employee_salary.salary_id = salary.id 
-where employee_salary.id is null and employee_salary.id < 2000;
+select monthly_salary from employees
+right join employee_salary ON employees.id = employee_salary.employee_id
+right join salary on employee_salary.salary_id = salary.id 
+where employees.id is null and employee_salary.id < 2000;
 -- Найти всех работников кому не начислена ЗП.
 select employee_name, monthly_salary from employees 
 left join employee_salary on employees.id = employee_salary.employee_id 
