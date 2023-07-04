@@ -95,6 +95,7 @@ INSERT INTO employees (employee_name) VALUES
 Таблица **salary**
 
 3) Создать таблицу salary
+
 -id. Serial  primary key,
 
 -monthly_salary. Int, not null
@@ -127,6 +128,7 @@ INSERT INTO salary (monthly_salary) VALUES
 Таблица **employee_salary**
 
 5) Создать таблицу employee_salary
+
 -id. Serial  primary key,
 
 -employee_id. Int, not null, unique
@@ -206,7 +208,7 @@ CREATE TABLE roles (
 ALTER TABLE roles
 ALTER COLUMN role_name TYPE VARCHAR(30);
 ```
-9)Наполнить таблицу roles 20 строками:
+9) Наполнить таблицу roles 20 строками:
 ```
 INSERT INTO roles (role_name) VALUES
   ('Junior Python developer'),
@@ -331,11 +333,11 @@ VALUES
 
 9. Вывести пользователей которые были созданы 2021-03-26 00:00:00
 
-`SELECT * FROM students WHERE DATETIME(created_on) = '2021-03-26 00:00:00';`
+`SELECT * FROM students WHERE DATE(created_on) = '2021-03-26 00:00:00';`
 
 10. Вывести пользователей где в имени есть слово Анна
 
-`SELECT * FROM students WHERE name LIKE '%Анна%';`
+`SELECT * FROM students WHERE name LIKE '%Anna%';`
 
 11. Вывести пользователей где в имени в конце есть 8
 
@@ -347,19 +349,19 @@ VALUES
 
 13. Вывести пользователей которые были созданы 2021-07-12 00:00:00
 
-`SELECT * FROM students WHERE DATETIME(created_on) = '2021-07-12 00:00:00';`
+`SELECT * FROM students WHERE DATE(created_on) = '2021-07-12 00:00:00';`
 
 14. Вывести пользователей которые были созданы 2021-07-12 00:00:00 и имеют пароль 1m313
 
-`SELECT * FROM students WHERE DATETIME(created_on) = '2021-07-12 00:00:00' AND password = '1m313';`
+`SELECT * FROM students WHERE DATE(created_on) = '2021-07-12 00:00:00' AND password = '1m313';`
 
 15. Вывести пользователей которые были созданы 2021-07-12 00:00:00 и у которых в имени есть слово Andrey
 
-`SELECT * FROM students WHERE DATETIME(created_on) = '2021-07-12 00:00:00' AND name LIKE '%Andrey%';`
+`SELECT * FROM students WHERE DATE(created_on) = '2021-07-12 00:00:00' AND name LIKE '%Andrey%';`
 
 16. Вывести пользователей которые были созданы 2021-07-12 00:00:00 и у которых в имени есть цифра 8
 
-`SELECT * FROM students WHERE DATETIME(created_on) = '2021-07-12 00:00:00' AND name LIKE '%8%';`
+`SELECT * FROM students WHERE DATE(created_on) = '2021-07-12 00:00:00' AND name LIKE '%8%';`
 
 17. Вывести пользователя у которых id равен 110
 
@@ -403,7 +405,7 @@ VALUES
 
 27. Вывести пользователей где created_on равен 2020-10-03 00:00:00, 2021-05-19 00:00:00, 2021-03-26 00:00:00
 
-`SELECT * FROM students WHERE DATETIME(created_on) IN ('2020-10-03 00:00:00', '2021-05-19 00:00:00', '2021-03-26 00:00:00');`
+`SELECT * FROM students WHERE DATE(created_on) IN ('2020-10-03 00:00:00', '2021-05-19 00:00:00', '2021-03-26 00:00:00');`
 
 28. Вывести минимальный id 
 
@@ -559,7 +561,7 @@ select monthly_salary from salary
 join employee_salary on salary.id = employee_salary.salary_id 
 join roles_employee on employee_salary.employee_id  = roles_employee.employee_id 
 join roles on roles_employee.role_id = roles.id 
-where role_name like '%Python developer'
+where role_name like '%Python developer';
 ```
 17. Вывести имена и зарплаты Junior Python разработчиков
 
@@ -689,7 +691,7 @@ join employee_salary on salary.id = employee_salary.salary_id
 join employees on employee_salary.employee_id = employees.id 
 join roles_employee on employees.id = roles_employee.employee_id 
 join roles on roles_employee.role_id = roles.id 
-order by monthly_salary
+order by monthly_salary;
 ```
 30. Вывести имена, должности и ЗП всех специалистов по возрастанию у специалистов у которых ЗП от 1700 до 2300
 
@@ -700,7 +702,7 @@ join employees on employee_salary.employee_id = employees.id
 join roles_employee on employees.id = roles_employee.employee_id 
 join roles on roles_employee.role_id = roles.id 
 where monthly_salary between 1700 and 2300
-order by monthly_salary
+order by monthly_salary;
 ```
 31. Вывести имена, должности и ЗП всех специалистов по возрастанию у специалистов у которых ЗП меньше 2300
 
@@ -711,7 +713,7 @@ join employees on employee_salary.employee_id = employees.id
 join roles_employee on employees.id = roles_employee.employee_id 
 join roles on roles_employee.role_id = roles.id 
 where monthly_salary < 2300
-order by monthly_salary
+order by monthly_salary;
 ```
 32. Вывести имена, должности и ЗП всех специалистов по возрастанию у специалистов у которых ЗП равна 1100, 1500, 2000
 
@@ -722,7 +724,7 @@ join employees on employee_salary.employee_id = employees.id
 join roles_employee on employees.id = roles_employee.employee_id 
 join roles on roles_employee.role_id = roles.id 
 where monthly_salary in (1100, 1500, 2000)
-order by monthly_salary
+order by monthly_salary;
 ```
 
 ***
